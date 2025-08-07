@@ -5,9 +5,21 @@ import 'aos/dist/aos.css'
 
 // 1. 视频播放懒加载功能
 const videos = ref([
-  { src: "/case1.mp4", poster: "/cover1.jpg", playing: false },
-  { src: "/case2.mp4", poster: "/cover2.jpg", playing: false },
-  { src: "/case3.mp4", poster: "/cover3.jpg", playing: false }
+  {
+    src: import.meta.env.BASE_URL + "case1.mp4",
+    poster: import.meta.env.BASE_URL + "cover1.jpg",
+    playing: false
+  },
+  {
+    src: import.meta.env.BASE_URL + "case2.mp4",
+    poster: import.meta.env.BASE_URL + "cover2.jpg",
+    playing: false
+  },
+  {
+    src: import.meta.env.BASE_URL + "case3.mp4",
+    poster: import.meta.env.BASE_URL + "cover3.jpg",
+    playing: false
+  }
 ])
 
 function playVideo(index) {
