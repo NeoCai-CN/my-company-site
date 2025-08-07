@@ -1,6 +1,9 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted, onBeforeUnmount } from 'vue'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
+// 1. 视频播放懒加载功能
 const videos = ref([
   { src: "/case1.mp4", poster: "/cover1.jpg", playing: false },
   { src: "/case2.mp4", poster: "/cover2.jpg", playing: false },
@@ -10,7 +13,49 @@ const videos = ref([
 function playVideo(index) {
   videos.value[index].playing = true
 }
+
+// 2. 导航栏滚动状态
+const isScrolled = ref(false)
+const menuOpen = ref(false)
+
+function handleScroll() {
+  isScrolled.value = window.scrollY > 20
+  if (window.scrollY === 0) {
+    AOS.refreshHard()
+  }
+}
+
+// 3. 平滑滚动 + 联系我们动画
+function scrollToSection(id) {
+  const section = document.getElementById(id)
+  if (section) {
+    section.scrollIntoView({ behavior: 'smooth' })
+  }
+
+  if (id === 'contact') {
+    const title = document.querySelector('#contact h2')
+    if (title) {
+      title.classList.remove('zoom-pulse')
+      void title.offsetWidth
+      title.classList.add('zoom-pulse')
+    }
+  }
+}
+
+onMounted(() => {
+  window.addEventListener('scroll', handleScroll)
+  AOS.init({
+    duration: 800,
+    easing: 'ease-out-cubic',
+    once: false
+  })
+})
+
+onBeforeUnmount(() => {
+  window.removeEventListener('scroll', handleScroll)
+})
 </script>
+
 
 <template>
   <!-- 导航栏 -->
