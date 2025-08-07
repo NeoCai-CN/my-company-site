@@ -66,7 +66,7 @@ onBeforeUnmount(() => {
   >
     <div class="max-w-7xl mx-auto flex items-center justify-between px-4 md:px-8">
       <div class="flex items-center space-x-2">
-        <img src="/Logo.png" alt="Logo" class="h-16 w-30 object-contain" />
+        <img src="/Logo.png" alt="Logo" class="h-11 w-30 object-contain" />
       </div>
 
       <ul class="hidden md:flex items-center gap-8 text-white font-medium text-sm md:text-base">
