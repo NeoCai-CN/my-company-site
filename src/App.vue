@@ -104,21 +104,13 @@ onBeforeUnmount(() => {
     </div>
   </nav>
 
-  <!-- 首屏视频背景 -->
+ <!-- 首屏 GIF 背景 -->
 <section id="home" class="h-screen relative flex flex-col justify-center items-center text-center">
-  <video
-    autoplay
-    muted
-    playsinline
-    webkit-playsinline
-    x5-playsinline
-    preload="auto"
-    loop
-    poster="/banner-poster.jpg"
+  <img
+    src="/banner.gif"
+    alt="首页动画"
     class="absolute w-full h-full object-cover"
-  >
-    <source src="/banner.mp4" type="video/mp4" />
-  </video>
+  />
   <div class="absolute inset-0 bg-black bg-opacity-50"></div>
 
   <h2 class="relative z-10 text-white text-4xl md:text-6xl font-bold mb-20" data-aos="fade-up">
