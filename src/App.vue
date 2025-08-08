@@ -105,28 +105,39 @@ onBeforeUnmount(() => {
   </nav>
 
   <!-- 首屏视频背景 -->
-  <section id="home" class="h-screen relative flex flex-col justify-center items-center text-center">
-    <video autoplay muted loop playsinline class="absolute w-full h-full object-cover">
-      <source src="/banner.mp4" type="video/mp4" />
-    </video>
-    <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+<section id="home" class="h-screen relative flex flex-col justify-center items-center text-center">
+  <video
+    autoplay
+    muted
+    playsinline
+    webkit-playsinline
+    x5-playsinline
+    preload="auto"
+    loop
+    poster="/banner-poster.jpg"
+    class="absolute w-full h-full object-cover"
+  >
+    <source src="/banner.mp4" type="video/mp4" />
+  </video>
+  <div class="absolute inset-0 bg-black bg-opacity-50"></div>
 
-    <h2 class="relative z-10 text-white text-4xl md:text-6xl font-bold mb-20" data-aos="fade-up">
-      改造世界？游戏化。
-    </h2>
+  <h2 class="relative z-10 text-white text-4xl md:text-6xl font-bold mb-20" data-aos="fade-up">
+    改造世界？游戏化。
+  </h2>
 
-    <div
-      @click="scrollToSection('services')"
-      class="absolute bottom-6 left-1/2 transform -translate-x-1/2 z-10 cursor-pointer"
-    >
-      <div class="flex flex-col items-center justify-center w-24 text-white animate-bounce">
-        <span class="text-sm mb-1 text-center">向下滑动</span>
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-        </svg>
-      </div>
+  <div
+    @click="scrollToSection('services')"
+    class="absolute bottom-6 left-1/2 transform -translate-x-1/2 z-10 cursor-pointer"
+  >
+    <div class="flex flex-col items-center justify-center w-24 text-white animate-bounce">
+      <span class="text-sm mb-1 text-center">向下滑动</span>
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+      </svg>
     </div>
-  </section>
+  </div>
+</section>
+
 
   <!-- 服务模块 -->
   <section id="services" class="py-16 container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
